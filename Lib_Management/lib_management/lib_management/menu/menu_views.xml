@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="mail.menu_root_discuss" model="ir.ui.menu">
+            <field name="sequence" eval="1"/>
+        </record>
+
+        <menuitem id="library_menu_view" name="Quản lý thư viện" sequence="0"/>
+
+        <menuitem id="book_menu_view"
+                  name="Quản lý đầu sách"
+                  action="lib_management.lib_management_product_template_action"
+                  parent="library_menu_view" sequence="1"/>
+
+        <menuitem id="library_report_management"
+                  name="Báo Cáo"
+                  parent="library_menu_view" sequence="100"/>
+
+        <menuitem id="library_config_management"
+                  name="Quản lý"
+                  parent="library_menu_view" sequence="100"/>
+
+        <menuitem id="library_reader_management_menu"
+                  name="Quản lý độc giả"
+                  action="lib_management.lib_reader_act_window"
+                  parent="library_config_management" sequence="1"/>
+
+        <menuitem id="library_borrowing_book_management_menu"
+                  name="Quản lý mượn trả sách"
+                  action="lib_management.call_card_action_view"
+                  parent="library_config_management" sequence="10"/>
+
+        <menuitem id="library_violation_management_management_menu"
+                  name="Quản lý vi phạm"
+                  action="lib_management.book_category_action"
+                  parent="library_config_management" sequence="20"/>
+
+        <menuitem id="library_book_category_menu"
+                  name="Loại đầu sách"
+                  action="lib_management.book_category_action"
+                  parent="library_config_management" sequence="30"/>
+
+        <menuitem id="library_budget_management_menu"
+                  name="Quản lý ngân sách"
+                  action="lib_management.book_category_action"
+                  parent="library_config_management" sequence="100"/>
+    </data>
+</odoo>
